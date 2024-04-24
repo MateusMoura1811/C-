@@ -1,0 +1,38 @@
+using System;
+
+namespace aula1804
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n, idade, num;
+            int neleitor = 0, eleitor = 0, feleitor = 0;
+
+            Console.WriteLine("Qual o numero de pessoas? ");
+            num = Convert.ToInt32(Console.ReadLine());
+
+            for (n=1 ; n<=num ; n++){
+                Console.WriteLine($"Idade da pessoa {n} de {num}");
+                idade = Convert.ToInt32(Console.ReadLine());
+
+                if (idade <= 15){
+                    Console.WriteLine($"A pessoa {n} não é eleitora");
+                    Console.WriteLine("");
+                    neleitor++;
+                }
+                else if (idade >= 18 && idade <= 70 ){
+                    Console.WriteLine($"A pessoa {n} é eleitora");
+                    Console.WriteLine("");
+                    eleitor++;
+                }
+                else {
+                    Console.WriteLine($"A pessoa {n} é eleitora facultativa");
+                    Console.WriteLine("");
+                    feleitor++;
+                }
+            }
+            Console.WriteLine($"Das {num} pessoas, {neleitor} não são eleitores, {eleitor} são eleitores e {feleitor} são eleitores facultativos. ");
+        }
+    }
+}
